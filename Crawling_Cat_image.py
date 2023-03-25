@@ -13,11 +13,17 @@ html_text = response.text
 #html 파싱
 soup = bs(html_text, 'html.parser')
 #bs4 패키지의 select 함수와 선택자 개념을 이용해서 뉴스기사 제목을 모두 가져온다.
-images = soup.select('img._image._listImage')
+images = soup.select('img')
 
+j = 1 # 넘버링을 위한 변수 
 
-for i in images:
-    src = i.get('src')
-    print(src)
+for i in range(10):
+    src = images[i]['src'] #URL 받아오기 
+    image_name  = "Cat" + str(j) + ".png" #저장파일 명을 안받아오면 그냥 txt 파일이므로 .png 추가
+    j += 1
+    with open(image_name, "wb") as f :
+        f.write(requests.get(src).content)
+    
         
+    
     
