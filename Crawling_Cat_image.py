@@ -22,7 +22,7 @@ for i in range(10):
     image_name  = "Cat" + str(j) + ".png" #저장파일 명을 안받아오면 그냥 txt 파일이므로 .png 추가
     j += 1
     with open(image_name, "wb") as f :
-        f.write(requests.get(src).content)
+        f.write(requests.get(src).content) # binary로 받아온다 
     
         
     
