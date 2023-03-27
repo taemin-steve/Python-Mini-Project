@@ -20,7 +20,7 @@ j = 1 # 넘버링을 위한 변수
 for i in range(10):
     src = images[i]['src'] #URL 받아오기 
     image_name  = "Cat" + str(j) + ".png" #저장파일 명을 안받아오면 그냥 txt 파일이므로 .png 추가
-    j += 1
+    j += 1 # 넘버링 증가 
     with open(image_name, "wb") as f :
         f.write(requests.get(src).content) # binary로 받아온다 
     
