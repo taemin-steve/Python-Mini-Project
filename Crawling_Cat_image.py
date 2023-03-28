@@ -13,7 +13,7 @@ html_text = response.text
 #html 파싱
 soup = bs(html_text, 'html.parser')
 #bs4 패키지의 select 함수와 선택자 개념을 이용해서 뉴스기사 제목을 모두 가져온다.
-images = soup.select('img')
+images = soup.select('img') # 왜 이것만 되는거지? .~~ 해도 되야 할거같은데 안됨
 
 j = 1 # 넘버링을 위한 변수 
 
