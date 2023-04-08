@@ -8,7 +8,7 @@ query = input('검색할 키워드를 입력하세요: ')
 
 #access to url by chrome driver
 url = 'https://www.naver.com/'
-driver = webdriver.Chrome('/Users/EHmin/Desktop/chromedriver') #/! where is chromedriver? I can't find it 
+driver = webdriver.Chrome('/Users/EHmin/Desktop/chromedriver') #/! where is chromedriver? I can't find it >> 
 driver.get(url)
 
 
