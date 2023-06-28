@@ -1,0 +1,70 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block scripts %}
+    {{block.super}}
+    <scripts>
+
+    </scripts>
+{% endblock %}
+
+{% block body %}
+    {% include "navbar.html" %}
+    <main id="main">
+    <section id="breakcrumbs" class="breadcrumbs">
+        <div class="container">
+            <div class="d-flect justify-content-between align-items-center">
+                <h2>Portfolio Details</h2>
+                <ol>
+                    <li> <a href="index.html">Home</a></li>
+                    <li>Portfolio Details</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+        <div class="container" data-aos="fade-up">
+
+          <div class="section-title">
+            <h2>게시판 목록</h2>
+            {% if not rsBoard %}
+                <p class="text-center">내용이 없습니다 !</p>
+            {% endif %}
+            <div >
+                {% for i in rsBoard %}
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td width="8%" align="center">{{i.b_no}}</td>
+                            <td width="32%" >{{i.b_title}}</td>
+                            <td width="25%" >{{i.b_note}}</td>
+                            <td width="10%" align="center">{{i.b_writer}}</td>
+                            <td width="10%" align="center">{{i.d_data}}</td>
+                            <td width="15%" align="center">
+                                <a href="/board_view?b_no={{ i.b_no}}" class="btn btn-outline-success">보기</a>
+                                <a href="/board_delete?b_no={{ i.b_no}}" class="btn btn-outline-success">삭제</a>
+                                <a href="javascript : alert('연습해보셈')" class="btn btn-outline-success">Ajax삭제</a>
+
+                            </td>
+
+                        </tr>
+                    </table>
+                {% endfor%}
+                
+
+            </div>
+          </div>
+
+
+        </div>
+      </section><!-- End Services Section -->
+
+    </main>
+
+    {% include "footer.html" %}
+
+{% endblock  %}
+
+

@@ -21,5 +21,4 @@ from django.urls import re_path
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('board.urls')),
-    
 ]

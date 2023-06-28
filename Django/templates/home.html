@@ -1,28 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <style>
-        .myclass {
-            color: blue;
-        }
-    </style>
-    <script>
-        function testFunction() {
-            alert("javascript function...");
-        }
-    </script>
-</head>
-<body>
-    <div>
-        <h3>장고(Django) + MariaDB 계시판 </h3>
-        <ul style="display: flex;">
-            <li style="list-style: none; margin: right 10px;"><button>HOME</button></li>
-            <li style="list-style: none; margin: right 10px;"><button onclick="testFunction()">Call function</button></li>
-            <li style="list-style: none; margin: right 10px;"><a href="https://www.youtube.com/watch?v=YK737-SIy00&list=PLr_ki3_GfpZMCHR_Im1AEeRd-NNs16KSh&index=15" target="_blank"><button>COP</button></li>
-        </ul>
+{% extends "base.html"%}
+{% load static %}
+ 
+{% block body %}
+        
+    {% include "navbar.html" %}    
+
+     <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>게시판 만들기</h1>
+          <h2>꾸준하게</h2>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="#about" class="btn-get-started scrollto">바로가기</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="{% static 'assets/img/hero-img.png' %}" class="img-fluid animated" alt="">
+        </div>
+      </div>
     </div>
-</body>
-</html>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <h3>게시판을 작성해 봅시다.</h3>
+    <img src="{% static '_images/cop.png' %}" alt="">
+  </main>
+
+    {% include "footer.html" %}
+{% endblock %}
